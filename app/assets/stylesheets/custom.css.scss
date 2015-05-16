@@ -1,11 +1,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#prova{
-    font-family: cursive;
-    background: red;
+.carousel-inner > .item > img{
+height:auto!important;
+position:relative!important;
+}
+.carousel .item{
+overflow:hidden!important;
+height:auto;
+}
+.carousel-inner {
+position: relative;
+width: 100%;
+overflow: hidden;
 }
 
-.carousel-inner{
-  height:500px;
+.navbar{
+    margin-bottom: 0px;
 }
