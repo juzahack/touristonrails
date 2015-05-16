@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= form_tag(paths_path, :method => "get", id: "search-form") do %>
+  <% types_array = User::TYPES.map { |t| [t, t] } %>
+  <%= select_tag(:user, options_for_select(types_array)) %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <h1>Listing Paths</h1>
 
 <table>

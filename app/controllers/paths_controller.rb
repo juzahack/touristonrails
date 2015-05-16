@@ -4,7 +4,11 @@ class PathsController < ApplicationController
   # GET /paths
   # GET /paths.json
   def index
-    @paths = Path.all
+    if params[:search]
+      @users = Path.search(params[:search])
+    else
+      @paths = Path.all
+    end
   end
 
   # GET /paths/1
