@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'static_pages/home'
   get 'static_pages/help'
+  get 'whoarewe' =>'static_pages#whoarewe'
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
