@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516183133) do
+ActiveRecord::Schema.define(version: 20150516190406) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "name"
@@ -21,13 +21,16 @@ ActiveRecord::Schema.define(version: 20150516183133) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "activities_paths", id: false, force: :cascade do |t|
-    t.integer "path_id"
-    t.integer "activity_id"
+  create_table "elements", force: :cascade do |t|
+    t.integer  "path_id"
+    t.integer  "activity_id"
+    t.integer  "order"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "activities_paths", ["activity_id"], name: "index_activities_paths_on_activity_id"
-  add_index "activities_paths", ["path_id"], name: "index_activities_paths_on_path_id"
+  add_index "elements", ["activity_id"], name: "index_elements_on_activity_id"
+  add_index "elements", ["path_id"], name: "index_elements_on_path_id"
 
   create_table "paths", force: :cascade do |t|
     t.date     "date"
@@ -55,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150516183133) do
     t.string   "email"
     t.integer  "reputation"
     t.string   "place"
-    t.string   "type"
+    t.string   "kind"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"

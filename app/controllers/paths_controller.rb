@@ -10,6 +10,7 @@ class PathsController < ApplicationController
   # GET /paths/1
   # GET /paths/1.json
   def show
+    @activities=@path.activities
   end
 
   # GET /paths/new
@@ -69,6 +70,6 @@ class PathsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def path_params
-      params.require(:path).permit(:date, :place, :weather, :type, :trip)
+      params.require(:path).permit(:date, :place, :weather, :kind, :trip)
     end
 end

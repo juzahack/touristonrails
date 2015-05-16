@@ -25,5 +25,29 @@
   <%= @user.place %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.name %></td>
+        <td><%= activity.kind %></td>
+        <td><%= activity.description %></td>
+        <td><%= link_to 'Show', activity %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
