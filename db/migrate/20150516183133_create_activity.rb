@@ -7,10 +7,5 @@ class CreateActivity < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-
-    create_table :activities_paths, id: false do |t|
-      t.belongs_to :path, index: true
-      t.belongs_to :activity, index: true
-    end
   end
 end

@@ -1,1 +1,1 @@
-json.extract! @path, :id, :date, :place, :weather, :type, :trip, :created_at, :updated_at
+json.extract! @path, :id, :date, :place, :weather, :kind, :trip, :created_at, :updated_at

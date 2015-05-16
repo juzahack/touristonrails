@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.integer :reputation
       t.string :place
-      t.string :type
+      t.string :kind
 
       t.timestamps null: false
     end
