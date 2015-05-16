@@ -1,0 +1,42 @@
+class CreateUsers < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+      t.string :surname
+      t.string :name
+      t.string :email
+      t.integer :reputation
+      t.string :place
+      t.string :type
+
+      t.timestamps null: false
+    end
+
+    create_table :paths do |t|
+      t.date :date
+      t.string :place
+      t.string :weather
+      t.string :type
+      t.string :trip
+
+      t.timestamps null: false
+    end
+
+     create_table :paths_users, id: false do |t|
+      t.belongs_to :user, index: true
+      t.belongs_to :path, index: true
+    end
+
+    create_table :activities do |t|
+      t.string :name
+      t.string :type
+      t.string :description
+
+      t.timestamps null: false
+    end
+
+    create_table :activities_paths, id: false do |t|
+      t.belongs_to :path, index: true
+      t.belongs_to :activity, index: true
+    end
+  end
+end
