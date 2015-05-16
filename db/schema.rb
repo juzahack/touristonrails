@@ -11,17 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150516144205) do
+ActiveRecord::Schema.define(version: 20150516183133) do
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "kind"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "activities_paths", id: false, force: :cascade do |t|
+    t.integer "path_id"
+    t.integer "activity_id"
+  end
+
+  add_index "activities_paths", ["activity_id"], name: "index_activities_paths_on_activity_id"
+  add_index "activities_paths", ["path_id"], name: "index_activities_paths_on_path_id"
 
   create_table "paths", force: :cascade do |t|
     t.date     "date"
     t.string   "place"
     t.string   "weather"
-    t.string   "type"
+    t.string   "kind"
     t.string   "trip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "paths_users", id: false, force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "path_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "paths_users", ["path_id"], name: "index_paths_users_on_path_id"
+  add_index "paths_users", ["user_id"], name: "index_paths_users_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "surname"
@@ -30,8 +56,9 @@ ActiveRecord::Schema.define(version: 20150516144205) do
     t.integer  "reputation"
     t.string   "place"
     t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end
