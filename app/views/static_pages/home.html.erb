@@ -105,19 +105,54 @@
             <div class="col-sm-6 tabbable">
                 <!-- Tabs go here -->
                 <ul id="myTab" class="nav nav-tabs">
-                    <li class="active"><a href="#orari" data-toggle="tab" style="color:#47a9e6; font-weight: bold">Family</a></li>
-                    <li><a href="#indirizzo" data-toggle="tab" class="yeah" style="color:#47a9e6; font-weight: bold">Couple</a></li>
+                    <li class="active"><a href="#orari" data-toggle="tab" style="color:#47a9e6; font-weight: bold">Family </a></li>
+                    <li><a href="#indirizzo" data-toggle="tab" class="yeah" style="color:#47a9e6; font-weight: bold">Couple </a></li>
                     <li><a href="#gallery" data-toggle="tab" style="color:#47a9e6; font-weight: bold">Single</a></li>
-                    <li><a href="#video" data-toggle="tab" style="color:#47a9e6; font-weight: bold">Over 60</a></li>
+                    <li><a href="#video" data-toggle="tab" style="color:#47a9e6; font-weight: bold">Over 60 </a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade in active" id="orari" style="font-weight: bold">Itinerario Family<br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                    <div class="tab-pane fade in active" id="orari" style="font-weight: bold"><strong>Place: </strong><%= @path.first.place %><br>
+                      <strong>Type: </strong><%= @path.first.trip %><br><br>
+
+                      <% @path.first.activities.each do |activity| %>
+                        <%= activity.name %><br>
+                      <% end %>
+
+                      <br><br>
+
+                      <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
                     
-                    <div class="tab-pane fade in" id="indirizzo"><a href="contatti.php" style="color:black; font-weight:bold">Itinerario Couple/a><br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                    <div class="tab-pane fade in" id="indirizzo">
+                      <strong>Place: </strong><%= @path.second.place %><br>
+                      <strong>Type: </strong><%= @path.second.trip %><br><br>
+                      <% @path.second.activities.each do |activity| %>
+                        <%= activity.name %><br>
+                      <% end %>
+
+                      <br><br>
+                      <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
                     
-                    <div class="tab-pane fade in" id="gallery"><a href="immagini.php" style="color:black; font-weight:bold">Itinerario Single</a><br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                    <div class="tab-pane fade in" id="gallery"><strong>Place: </strong><%= @path.third.place %><br>
+                      <strong>Type: </strong><%= @path.third.trip %><br><br>
+
+                      <% @path.third.activities.each do |activity| %>
+                        <%= activity.name %><br>
+                      <% end %>
+
+                      <br><br>
+
+                      <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
                     
-                    <div class="tab-pane fade in" id="video"><a href="video.php" style="color:black; font-weight:bold">Itinerario Over 60</a><br><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                    <div class="tab-pane fade in" id="video"><strong>Place: </strong><%= @path.fourth.place %><br>
+                      <strong>Type: </strong><%= @path.fourth.trip %><br><br>
+
+                      <% @path.fourth.activities.each do |activity| %>
+                        <%= activity.name %><br>
+                      <% end %>
+
+                      <br><br>
+
+                      <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
                 </div>
             </div>
            
