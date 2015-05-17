@@ -3,7 +3,6 @@
 <div class="col-md-3"></div>
   <div class="col-md-6">
 <h1>Search plan for today <%= Date.today%></h1>
-
 <%= form_tag(activities_path, :method => "get", id: "search-form", class:'form-group') do %>
   <% types_array = User::TYPES.map { |t| [t, t] } %>
   <%= label_tag(:q, "Activity for:") %>
@@ -16,7 +15,7 @@
   <%= label_tag(:q, "Max distance in km:") %>
   <%= number_field_tag :km, placeholder: "Max distance in km", class:'form-control' %>
   <%= label_tag(:q, "Max cost:") %>
-  <%= number_field_tag :cost, placeholder: "Max distance in km", class:'form-control' %>
+  <%= number_field_tag :cost, placeholder: "Max distance in km", class:'form-control' %><br>
   <%= label_tag(:q, "Weather:") %>
   <%= text_field_tag :weather, "sunny", :readonly => true, class:'form-control' %>
   <%= submit_tag "Search", :name => nil, class:'btn btn-default' %>
