@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'home' => 'static_pages#home'
   get 'static_pages/help'
   get 'whoarewe' =>'static_pages#whoarewe'
-
+  get 'sponsor' =>'static_pages#sponsor'
     
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
