@@ -12,6 +12,9 @@
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(home_path) %>" > <%= link_to 'Home', home_path %></li>
         <li class="<%= 'active' if current_page?(whoarewe_path) %>" > <%= link_to 'Who are we', whoarewe_path %></li>
+        <%if logged_in? %>
+          <li class="<%= 'active' if current_page?(activities_path) %>" > <%= link_to 'Search', activities_path %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
