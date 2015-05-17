@@ -4,10 +4,10 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.json
   def index
-    if search_params
+    if search_params[:kind_user]
       @activities = Activity.search(search_params).limit(5)
     else
-      @activities = Activity.limit(5)
+      @activities = nil
     end
   end
 

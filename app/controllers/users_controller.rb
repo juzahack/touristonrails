@@ -6,10 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    if params[:search]
-      @users = User.search(params[:search])
-    else
-      @users = User.all
+       @users = User.all
     end
   end
 
