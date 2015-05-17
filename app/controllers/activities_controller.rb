@@ -5,11 +5,10 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     if search_params
-      @activities = Activity.search(search_params)
+      @activities = Activity.search(search_params).limit(5)
     else
-      @activities = Activity.all
+      @activities = Activity.limit(5)
     end
-    @query=search_params
   end
 
   # GET /activities/1

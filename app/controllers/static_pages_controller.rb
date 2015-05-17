@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+  	@path=Path.all 
   end
 
   def help
