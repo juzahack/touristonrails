@@ -4,7 +4,12 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.json
   def index
-    @activities = Activity.all
+    if search_params
+      @activities = Activity.search(search_params)
+    else
+      @activities = Activity.all
+    end
+    @query=search_params
   end
 
   # GET /activities/1
@@ -69,6 +74,10 @@ class ActivitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
-      params.require(:activity).permit(:name, :kind, :description)
+      params.require(:activity).permit(:name, :kind, :description, :kind_user, :km, :cost, :weather)
+    end
+
+    def search_params
+      params.permit(:kind_user, :km, :cost, :weather, :category)
     end
 end

@@ -4,7 +4,7 @@ class PathsController < ApplicationController
   # GET /paths
   # GET /paths.json
   def index
-    @paths = Path.all
+      @paths = Path.all
   end
 
   # GET /paths/1

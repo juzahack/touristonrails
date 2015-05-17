@@ -10,4 +10,17 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, length: { minimum: 6 }
 
+  TYPES = [
+    :family,
+    :single,
+    :couple,
+    :over,
+    ].freeze
+
+    validates :kind, presence: true, :inclusion => {:in => TYPES}
+
+  def kind
+    read_attribute(:kind).to_sym      
+  end
+
 end
