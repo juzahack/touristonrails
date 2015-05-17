@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-05-16
+  place: MyString
+  weather: MyString
+  type: 
+  trip: MyString
+
+two:
+  date: 2015-05-16
+  place: MyString
+  weather: MyString
+  type: 
+  trip: MyString

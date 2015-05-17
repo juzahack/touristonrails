@@ -1,0 +1,28 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.carousel-inner > .item > img{
+height:auto!important;
+position:relative!important;
+}
+.carousel .item{
+overflow:hidden!important;
+height:auto;
+}
+.carousel-inner {
+position: relative;
+width: 100%;
+overflow: hidden;
+}
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+.col-sm-4{
+    width: 50%;
+    margin: 0px auto 0px auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+

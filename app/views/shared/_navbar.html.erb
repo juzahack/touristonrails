@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <%= link_to 'Sudtirol Tourism', home_path, class:"navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="<%= 'active' if current_page?(home_path) %>" > <%= link_to 'Home', home_path %></li>
+        <li class="<%= 'active' if current_page?(whoarewe_path) %>" > <%= link_to 'Who are we', whoarewe_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          
+        <%if !logged_in? %>  
+        <li><%= link_to 'login', login_path, class:"glyphicon glyphicon-log-in"  %></li>
+        <%else %>
+        <li><%= link_to 'logout', logout_path, class:"glyphicon glyphicon-log-in", method: "delete"  %></li>
+        <% end %>
+          
+      </ul>
+    </div>
+  </div>
+</nav>
