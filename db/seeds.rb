@@ -32,7 +32,7 @@ act=Activity.create([{name: "La passeggiata del Guncina",
 
 				{name: "Ristorante La Cantina",
 				category: :eat,
-				description: "Mangia xy",
+				description: "Cucina tipica altoatesina.",
 				cost: 25,
 				weather: "sunny",
 				kind: :family,

@@ -8,8 +8,9 @@ class Activity < ActiveRecord::Base
 		:cultur,
 		:sport,
 		:freetime,
-		#:eat,
 		].freeze
+
+		#:eat,
 
 	#validates :category, presence: true, :inclusion => {:in => TYPES}
 	#validates :kind, presence: true, :inclusion => {:in => User::TYPES}
