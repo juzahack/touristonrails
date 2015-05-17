@@ -2,10 +2,10 @@
 
 <h1>Search plan for today <%= Date.today%></h1>
 
-<%= form_tag(activities_path, :method => "get", id: "search-form") do %>
+<%= form_tag(activities_path, :method => "get", id: "search-form", class:'class="form-group"') do %>
   <% types_array = User::TYPES.map { |t| [t, t] } %>
   <%= label_tag(:q, "Activity for:") %>
-  <%= select_tag(:kind_user, options_for_select(types_array) , prompt: "Select type of user") %>
+  <%= select_tag(:kind_user, options_for_select(types_array) , prompt: "Select type of user", class:'form-control') %>
   <% act_array = Activity::TYPES.map { |t| [t, t] } %>
   <%= label_tag(:q, "Search for:") %>
   <%= select_tag(:category, options_for_select(act_array), multiple: true) %>
