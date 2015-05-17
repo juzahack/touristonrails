@@ -9,10 +9,10 @@
 User.create(name: "Paolo", surname: "Rossi", email: "paolo@rossi.it", kind: :family, password: "esempio", password_confirmation: "esempio")
 User.create(name: "Paolo", surname: "Bianchi", email: "paolo@bianchi.it", kind: :family, password: "esempio", password_confirmation: "esempio")
 
-path= Path.create(date: Date.today, place: "Bolzano", weather: "sunny", kind: :family, trip: "calm")
-Path.create(date: Date.today-1, place: "Merano", weather: "cloudy", kind: :single, trip: "calm")
-Path.create(date: Date.today-1, place: "Renon", weather: "sunny", kind: :couple, trip: "adventure")
-Path.create(date: Date.today-2, place: "Laives", weather: "sunny", kind: :single, trip: "adventure")
+path1= Path.create(date: Date.today, place: "Bolzano", weather: "sunny", kind: :family, trip: "relax")
+path2=Path.create(date: Date.today-1, place: "Merano", weather: "cloudy", kind: :couple, trip: "relax")
+path3=Path.create(date: Date.today-1, place: "Renon", weather: "sunny", kind: :single, trip: "adventure")
+path4=Path.create(date: Date.today-2, place: "Laives", weather: "sunny", kind: :over, trip: "adventure")
 
 act=Activity.create([{name: "La passeggiata del Guncina",
 				category: :freetime,
@@ -30,7 +30,7 @@ act=Activity.create([{name: "La passeggiata del Guncina",
 				kind: :family,
 				place: "Bolzano"},
 
-				{name: "Ristorante",
+				{name: "Ristorante La Cantina",
 				category: :eat,
 				description: "Mangia xy",
 				cost: 25,
@@ -53,7 +53,73 @@ act=Activity.create([{name: "La passeggiata del Guncina",
 				weather: "sunny",
 				kind: :family,
 				place: "Bolzano"}])
+#merano
+
+
+
+act1=Activity.create([{name: "Passeggiata Tappeiner",
+				category: :cultur,
+				description: "",
+				cost: 0,
+				weather: "cloudy",
+				kind: :couple,
+				place: "Merano"},
+
+				{name: "Ristorante Castel Fragsburg",
+				category: :eat,
+				description: "",
+				cost: 0,
+				weather: "cloudy",
+				kind: :couple,
+				place: "Merano"},
+
+				{name: "Museo della Donna Evelyn Ortner",
+				category: :cultur,
+				description: "",
+				cost: 0,
+				weather: "cloudy",
+				kind: :couple,
+				place: "Merano"}])
+
+#renon
+act2=Activity.create([{name: "Passeggiata - Sulle tracce di Sigmund Freud",
+				category: :freetime,
+				description: "",
+				cost: 0,
+				weather: "sunny",
+				kind: :single,
+				place: "Renon"},
+
+				{name: "Haidgerberhof",
+				category: :eat,
+				description: "",
+				cost: 0,
+				weather: "sunny",
+				kind: :single,
+				place: "Renon"},
+
+				{name: "Museo della Apicoltura",
+				category: :cultur,
+				description: "",
+				cost: 0,
+				weather: "cloudy",
+				kind: :single,
+				place: "Renon"}])
+
+				
 
 5.times do |i|
-	path.activities<<act[i]
+	path1.activities<<act[i]
 end
+
+ path2.activities<<act1[0]
+ path2.activities<<act1[1]
+ path2.activities<<act1[2]
+
+path3.activities<<act2[0]
+path3.activities<<act2[1]
+path3.activities<<act2[2]
+
+path4.activities<<act[4]
+path4.activities<<act[2]
+path4.activities<<act[3]
