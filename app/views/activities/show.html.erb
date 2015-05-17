@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<div id="center" align=center>
+<h1> <%= image_tag("suedtirolLogo.png", :alt => "Logo Sud Tyrol click me", class:'img-responsive') %></h1>
 <p>
+    
   <strong>Name:</strong>
   <%= @activity.name %>
 </p>
@@ -15,5 +17,8 @@
   <%= @activity.description %>
 </p>
 
+
+
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %>
+</div>
